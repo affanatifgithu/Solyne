@@ -41,10 +41,10 @@ export const botConfig = {
     owners: process.env.OWNER_IDS?.split(",") || [],
 
     // Default wait time between command uses (in seconds).
-    defaultCooldown: 3, 
+    defaultCooldown: 1, 
 
     // If true, old commands are removed before re-registering.
-    deleteCommands: false,
+    deleteCommands: true,
 
     // Optional server ID used for testing slash commands quickly.
     testGuildId: process.env.TEST_GUILD_ID,
@@ -56,9 +56,9 @@ export const botConfig = {
   applications: {
     // Default questions shown when someone fills out an application.
     defaultQuestions: [
-      { question: "What is your name?", required: true },
-      { question: "How old are you?", required: true },
-      { question: "Why do you want to join?", required: true },
+      { question: "What is your name?", required: false },
+      { question: "How old are you?", required: false },
+      { question: "Why do you want to join?", required: false },
     ],
 
     // Embed colors by application status.
@@ -136,7 +136,7 @@ export const botConfig = {
     },
     footer: {
       // Default footer text used in bot embeds.
-      text: "Titan Bot",
+      text: "Solyne",
       // Footer icon URL (null = no icon).
       icon: null,
     },
@@ -437,7 +437,7 @@ export const botConfig = {
   features: {
     // Core systems.
     economy: true,
-    leveling: true,
+    leveling: false,
     moderation: true,
     logging: true,
     welcome: true,
